@@ -3,24 +3,23 @@ import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
   return (
-    <div style={{ background: '#0c3d59', paddingTop: '12px', paddingBottom: '12px' }}>
+    <div style={{ background: '#052621', paddingTop: '12px', paddingBottom: '12px' }}>
 
       <NavLink to="/" className="navbar-logo" style={{padding: '40px', margin: '0 8px 8px', color: 'white'}}>
-        Recipes
+        Recipeez
       </NavLink>
 
-      <NavLink to="/" style={link} className="navbar-link">
-        Home
-      </NavLink>
-
-      <NavLink to="/about" style={link} className="navbar-link">
-        About
+      <NavLink to="/recipes" style={link} className="navbar-link">
+        All Recipes
       </NavLink>
 
       <NavLink to="/categories" style={link} className="navbar-link">
         Categories
       </NavLink>
-
+      
+      <NavLink to="/about" style={link} className="navbar-link">
+        About
+      </NavLink>
       </div>
   )
 }

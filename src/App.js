@@ -4,8 +4,9 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/navBar';
 import Home from './components/home';
-import RecipeList from './components/recipeList';
+import RecipesContainer from './containers/recipesContainer';
 import CategoryList from './components/categoryList';
+
 
 class App extends React.Component {
 
@@ -16,7 +17,7 @@ class App extends React.Component {
         <NavBar />
         <Routes>
           <Route exact path="/" component={Home} />
-          <Route exact path="/recipes" component={RecipeList} />
+          <Route exact path="/recipes" component={RecipesContainer} />
           <Route exact path="/categories" component={CategoryList} />
         </Routes>
         </div>
