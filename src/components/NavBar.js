@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const NavBar = () => {
   return (
-    <div style={{ background: '#052621', paddingTop: '12px', paddingBottom: '12px' }}>
+    <div style={{ background: '#140303', paddingTop: '12px', paddingBottom: '12px' }}>
 
       <NavLink to="/" className="navbar-logo" style={{padding: '40px', margin: '0 8px 8px', color: 'white'}}>
         Recipeez

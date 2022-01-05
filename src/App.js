@@ -1,6 +1,5 @@
-
 import React from 'react';
-import './App.css';
+//import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/navBar';
 import Home from './components/home';
@@ -14,8 +13,8 @@ class App extends React.Component {
       <BrowserRouter>
         <div className="App">
         <NavBar />
+        <Home />
         <Routes>
-          <Route exact path="/" component={Home} />
           <Route exact path="/recipes" component={RecipesContainer} />
         </Routes>
         </div>
