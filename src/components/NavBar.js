@@ -6,7 +6,7 @@ const NavBar = () => {
     <div style={{ background: '#0c3d59', paddingTop: '12px', paddingBottom: '12px' }}>
 
       <NavLink to="/" className="navbar-logo" style={{padding: '40px', margin: '0 8px 8px', color: 'white'}}>
-        Scenter
+        Recipes
       </NavLink>
 
       <NavLink to="/" style={link} className="navbar-link">
@@ -17,8 +17,8 @@ const NavBar = () => {
         About
       </NavLink>
 
-      <NavLink to="/recipes" style={link} className="navbar-link">
-        Recipes
+      <NavLink to="/categories" style={link} className="navbar-link">
+        Categories
       </NavLink>
 
       </div>

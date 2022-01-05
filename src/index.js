@@ -1,13 +1,18 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import recipeReducer from './reducers/recipeReducer';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
+import store from './store.js'
+import { Provider } from 'react-redux'
 
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+  , document.getElementById('root')
+);
 
-
-const store = createStore(recipeReducer);
-
+serviceWorker.unregister();
 
 

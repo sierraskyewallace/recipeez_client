@@ -1,25 +1,31 @@
+
 import React from 'react';
-import { connect } from 'react-redux';
+import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import NavBar from './components/navBar';
+import Home from './components/home';
+import RecipeList from './components/recipeList';
+import CategoryList from './components/categoryList';
 
 class App extends React.Component {
 
-  componentDidMount() {
-    this.props.dispatch({ type: 'FETCH_CATEGORIES' });
-    this.props.dispatch({ type: 'FETCH_RECIPES' });
-  }
-}
-
-  render () {
+  render() {
     return (
-    <div className="App">
-      <Home />
-      < RecipeList />
-      < CategoryList />
-    </div>
-
-
-    );
+      <BrowserRouter>
+        <div className="App">
+        <NavBar />
+        <Routes>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/recipes" component={RecipeList} />
+          <Route exact path="/categories" component={CategoryList} />
+        </Routes>
+        </div>
+      </BrowserRouter>
+    )
   }
 }
 
-export default connect()(App);
+
+export default App;
+
+
