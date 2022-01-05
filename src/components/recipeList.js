@@ -1,20 +1,22 @@
-import React from "react";
+import React from 'react';
+import RecipeCard from './recipeCard';
 
-
-const RecipeList = (props) => {
-    return (
-        <div>
-        <h1>Recipe List</h1>
-        <ul>
-            {props.recipes.map(recipe => (
-            <li key={recipe.id}>
-                <h2>{recipe.name}</h2>
-                <p>{recipe.description}</p>
-            </li>
-            ))}
-        </ul>
-        </div>
+const RecipeList = ({ recipes }) => {
+  
+    const renderRecipes = recipes.map(recipe =>
+       <RecipeCard key={recipe.id} recipe={recipe} />
     );
-    }
-
-export default RecipeList;
+  
+      return (
+        <div className="recipes-list">
+          <div className="container-fluid">
+            <div className="row">
+              {renderRecipes}
+            </div>
+          </div>  
+        </div>
+      )
+  
+  }
+  
+  export default RecipeList;
