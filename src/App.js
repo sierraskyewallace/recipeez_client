@@ -4,13 +4,19 @@ import { connect } from 'react-redux';
 class App extends React.Component {
 
   componentDidMount() {
+    this.props.dispatch({ type: 'FETCH_CATEGORIES' });
+    this.props.dispatch({ type: 'FETCH_RECIPES' });
   }
+}
 
   render () {
     return (
     <div className="App">
-      <h1>Hello World</h1>
+      < RecipeList />
+      < CategoryList />
     </div>
+    
+
     );
   }
 }
