@@ -2,21 +2,19 @@ import React from 'react';
 import RecipeCard from './recipeCard';
 
 const RecipeList = ({ recipes }) => {
-  
-    const renderRecipes = recipes.map(recipe =>
-       <RecipeCard key={recipe.id} recipe={recipe} />
-    );
-  
-      return (
-        <div className="recipes-list">
-          <div className="container-fluid">
-            <div className="row">
-              {renderRecipes}
+  return (
+    <div className="recipe-list">
+      <div className="container-fluid">
+        <div className="row">
+          {recipes.map(recipe => (
+            <div className="col-md-4" key={recipe.id}>
+              <RecipeCard recipe={recipe} />
             </div>
-          </div>  
+          ))}
         </div>
-      )
-  
-  }
-  
-  export default RecipeList;
+      </div>
+    </div>
+  );
+}
+
+export default RecipeList;

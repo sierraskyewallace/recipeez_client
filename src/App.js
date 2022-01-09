@@ -1,5 +1,4 @@
 import React from 'react';
-//import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from './components/navBar';
 import Home from './components/home';
@@ -15,7 +14,8 @@ class App extends React.Component {
         <NavBar />
         <Home />
         <Routes>
-          <Route exact path="/recipes" component={RecipesContainer} />
+          <Route path="/" element={<RecipesContainer />} />
+          
         </Routes>
         </div>
       </BrowserRouter>
@@ -23,7 +23,7 @@ class App extends React.Component {
   }
 }
 
-
 export default App;
+
 
 
