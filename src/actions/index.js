@@ -3,15 +3,15 @@
 const API_URL = 'http://localhost:3000/api/v1';
 
 
-    export const fetchRecipes = () => {
-        return (dispatch) => {
-            return fetch(`${API_URL}/recipes`)
-            .then(response => response.json())
+export const fetchRecipes = () => {
+    return dispatch => {
+        return fetch(`${API_URL}/recipes`)
+            .then(resp => resp.json())
             .then(recipes => {
-                dispatch(setRecipes(recipes));
-            });
-        };
-    };
+                dispatch(setRecipes(recipes))
+            })
+    }
+}
 
     export const fetchCategories = () => {
         return (dispatch) => {
