@@ -1,18 +1,32 @@
 import React from "react";
+import { connect } from "react-redux";
+import fetchRecipes from "../actions/index";
 import Recipes from "../components/Recipes";
 import RecipeInput from "../components/recipeInput";
 
 
 class RecipesContainer extends React.Component {
+
+    componentDidMount() {
+        this.props.fetchRecipes();
+    }
+
+
   render() {
     return (
         
         <div>
-            <Recipes />
+            <Recipes recipes={this.props.recipes.data} />
             <RecipeInput />
         </div>
         );
     }
 }
 
-export default RecipesContainer;
+const mapStateToProps = state => {
+    return {
+        recipes: state.recipes
+    };
+};
+
+export default connect(mapStateToProps, {fetchRecipes})(RecipesContainer);
