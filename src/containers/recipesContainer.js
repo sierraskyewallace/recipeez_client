@@ -16,7 +16,7 @@ class RecipesContainer extends React.Component {
     return (
         
         <div>
-            <Recipes recipes={this.props.recipes.data} />
+            <Recipes recipes={this.props.recipes} />
             <RecipeInput />
         </div>
         );
@@ -26,6 +26,7 @@ class RecipesContainer extends React.Component {
 const mapStateToProps = state => {
     return {
         recipes: state.recipes
+
     };
 };
 

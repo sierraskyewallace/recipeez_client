@@ -8,7 +8,7 @@ export default function fetchRecipes() {
     fetch(`${API_URL}/recipes`)
         .then(response => response.json())
         .then(recipes => {
-            dispatch({type: 'FETCH_RECIPES', payload: recipes});
+            dispatch({type: 'FETCH_RECIPES', payload: recipes.data});
         });
 
  
