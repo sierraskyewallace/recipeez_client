@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import fetchRecipes from "../actions/index";
+import fetchRecipes from "../actions/fetchRecipes";
 import Recipes from "../components/Recipes";
 import RecipeInput from "../components/recipeInput";
 

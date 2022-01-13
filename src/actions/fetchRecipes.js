@@ -10,6 +10,5 @@ export default function fetchRecipes() {
         .then(recipes => {
             dispatch({type: 'FETCH_RECIPES', payload: recipes.data});
         });
-
- 
-}}
+    };
+}
