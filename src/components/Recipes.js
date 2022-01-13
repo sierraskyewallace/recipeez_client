@@ -5,15 +5,15 @@ const Recipes = (props) => {
         <div>
             {props.recipes.map(recipe => {
                 return (
-                    <div key={recipe.id}>
-                        <h4>{recipe.attributes.name}</h4>
-
-                    </div>
+                    <li key={recipe.attributes.id}>
+                            {recipe.attributes.name} - {recipe.attributes.category.name}
+                    </li>
                 )
             })}
         </div>
     )
 }
+
     
 
 
