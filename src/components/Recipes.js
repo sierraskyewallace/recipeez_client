@@ -1,12 +1,12 @@
 import React from "react";
 
-const Recipes = (props) => {
+const Recipes = ({recipes}) => {
     return (
         <div>
-            {props.recipes.map(recipe => {
+            {recipes.map(recipe => {
                 return (
-                    <li key={recipe.attributes.id}>
-                            {recipe.attributes.name} - {recipe.attributes.category.name}
+                    <li key={recipe.id}>
+                            {recipe.attributes.name}
                     </li>
                 )
             })}

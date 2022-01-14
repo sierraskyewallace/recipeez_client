@@ -1,9 +1,12 @@
+const API_URL = 'http://localhost:3000/api/v1';
+
 export default function addRecipe(recipe) {
     return (dispatch) => {
-        fetch('http://localhost:3000/api/v1/recipes', {
+        fetch(`${API_URL}/recipes`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             },
             body: JSON.stringify(recipe)
         })

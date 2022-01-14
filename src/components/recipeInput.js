@@ -1,40 +1,33 @@
 
 import React from "react";
-import DropDown from "./dropDown";
-//import addRecipe from "../actions/addRecipe";
+
+import { connect } from "react-redux";
+import addRecipe from "../actions/addRecipe";
 
 
 
 class RecipeInput extends React.Component {
-constructor(props) {
-    super(props);
+    constructor(props) {
+        super(props);
     this.state = {
         name: "",
         description: "",
         instructions: "",
         ingredients: "",
         image_url: "",
-        category: "",
+        tag: "",
         }
-}
+    }
 
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
-        });
+        })
     }
 
     handleSubmit = (event) => {
         event.preventDefault();
         this.props.addRecipe(this.state);
-        this.setState({
-            name: "",
-            description: "",
-            instructions: "",
-            ingredients: "",
-            image_url: "",
-            category: "",
-        });
     }
 
 
@@ -57,15 +50,18 @@ constructor(props) {
                     <label> Image: </label><br></br>
                     <input type="text" name="image_url"value={this.state.image_url} onChange={this.handleChange}/><br></br>
                     
-                    <label> Category: </label><br></br>
+                    <label> Tag: </label><br></br>
                     
-                    <DropDown onChange={this.handleChange} />
                     
-                    <button type="submit" onClick={this.handleSubmit}>Submit</button>
+                    
+                    <br></br>
+                    <button onClick={this.handleSubmit}>Submit</button>
                 </form>
             </div>
          );
     }
+    
 }
 
-    export default RecipeInput;
+
+    export default connect(null, {addRecipe})(RecipeInput);
