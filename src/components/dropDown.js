@@ -6,7 +6,6 @@ class DropDown extends React.Component {
         super(props);
         this.state = {
             selectedOption: null,
-            tags: [],
             id: "",
             name: "",
             };
@@ -26,13 +25,19 @@ class DropDown extends React.Component {
          this.getTags();
     }
 
+    handleChange = (e) => {
+        this.setState({ id: e.value, name: e.label });
+    }
+
+
+
 
     render() {
 
         return (
             <div>
                 <Select
-                    options={this.state.tags} />
+                    options={this.state.tags} onChange={this.handleChange.bind(this)} />
             </div>
         );
     }

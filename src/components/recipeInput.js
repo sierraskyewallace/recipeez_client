@@ -3,6 +3,7 @@ import React from "react";
 import DropDown from "./dropDown";
 import { connect } from "react-redux";
 import addRecipe from "../actions/addRecipe";
+//import Select from "react-select";
 
 
 
@@ -15,10 +16,12 @@ class RecipeInput extends React.Component {
         instructions: "",
         ingredients: "",
         image_url: "",
-        tag: "",
-        }
+        tag_ids: "",
+            }
     }
 
+
+   
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
@@ -30,12 +33,8 @@ class RecipeInput extends React.Component {
         this.props.addRecipe(this.state);
     }
 
-
-
     render() { 
         
-
-
         return ( 
             <div>
                 <form>
@@ -53,8 +52,9 @@ class RecipeInput extends React.Component {
                     <label> Tag: </label><br></br>
                     
                     <DropDown />
+
                     
-                    <br></br>
+                     <br></br>
                     <button onClick={this.handleSubmit}>Submit</button>
                 </form>
             </div>

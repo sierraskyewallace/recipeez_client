@@ -6,13 +6,20 @@ const Recipes = ({recipes}) => {
             {recipes.map(recipe => {
                 return (
                     <li key={recipe.id}>
-                            {recipe.attributes.name} | 
+                            {recipe.attributes.name} | {recipe.attributes.tags.map(tag => {
+                                return (
+                                    <span key={tag.id}>{tag.name}</span>
+                                )
+                            })}
                     </li>
                 )
             })}
         </div>
     )
 }
+
+
+    
 
     
 
