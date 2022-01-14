@@ -1,13 +1,11 @@
 import React from "react";
 
 const Categories = (props) => {
-    return ( 
+    return (
         <div>
-            categories
+            catwegfnjf
         </div>
     )
 }
-
-
 
 export default Categories;

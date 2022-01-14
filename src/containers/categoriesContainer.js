@@ -9,6 +9,7 @@ class CategoriesContainer extends React.Component {
 
     componentDidMount() {
         this.props.fetchCategories();
+        
     }
 
 

@@ -1,12 +1,29 @@
 
 import React from "react";
+//import Select from "react-select";
+import DropDown from "./dropDown";
 
 
 
 
 class RecipeInput extends React.Component {
+constructor(props) {
+    super(props);
+    this.state = {
+        name: "",
+        description: "",
+        instructions: "",
+        ingredients: "",
+        image_url: "",
+        categories: [],
+        }
+}
+
+
 
     render() { 
+        
+
 
         return ( 
             <div>
@@ -23,6 +40,11 @@ class RecipeInput extends React.Component {
                     <input type="text" name="image_url" /><br></br>
                     
                     <label> Category: </label><br></br>
+                    
+                    <DropDown />
+                     
+                        
+
 
                     <button type="submit">Submit</button>
                 </form>
