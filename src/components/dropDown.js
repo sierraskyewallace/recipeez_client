@@ -26,13 +26,18 @@ class DropDown extends React.Component {
          this.getCategories();
     }
 
+    handleChange = (e) => {
+        this.setState({  id: e.value, name: e.label });
+
+    }
+
 
     render() {
-        console.log(this.state.categories);
         return (
             <div>
                 <Select
-                    options={this.state.categories} />
+                    options={this.state.categories} onChange = {this.handleChange.bind(this)} />
+                    
             </div>
         );
     }
