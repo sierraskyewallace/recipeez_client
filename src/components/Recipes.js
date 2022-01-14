@@ -6,7 +6,7 @@ const Recipes = ({recipes}) => {
             {recipes.map(recipe => {
                 return (
                     <li key={recipe.id}>
-                            {recipe.attributes.name}
+                            {recipe.attributes.name} | 
                     </li>
                 )
             })}

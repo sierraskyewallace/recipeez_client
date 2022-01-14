@@ -1,6 +1,6 @@
 
 import React from "react";
-
+import DropDown from "./dropDown";
 import { connect } from "react-redux";
 import addRecipe from "../actions/addRecipe";
 
@@ -52,7 +52,7 @@ class RecipeInput extends React.Component {
                     
                     <label> Tag: </label><br></br>
                     
-                    
+                    <DropDown />
                     
                     <br></br>
                     <button onClick={this.handleSubmit}>Submit</button>
