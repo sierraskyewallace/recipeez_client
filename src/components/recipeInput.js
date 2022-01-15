@@ -25,7 +25,6 @@ class RecipeInput extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        this.props.addRecipe(this.state);
         this.setState({
             name: "",
             description: "",
@@ -33,6 +32,7 @@ class RecipeInput extends React.Component {
             instructions: "",
             image_url: "",
         });
+        this.props.addRecipe(this.state);  
     }
 
     render() {

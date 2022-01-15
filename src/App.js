@@ -12,16 +12,13 @@ class App extends React.Component {
   
   componentDidMount() {
   }
-
-
-
+ 
 
   render() {
     return (
-      <div className="App">
-        
+      <div className="App"> 
         <Home />
-
+        
         <RecipesContainer />
    
       </div>

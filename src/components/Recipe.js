@@ -1,15 +1,14 @@
 import React from "react";
 
+
 const Recipe = ({ recipe }) => {
     return (
         <div>
-        <h1>{recipe.name}</h1>
-        <p>{recipe.description}</p>
-        <p>{recipe.ingredients}</p>
-        <p>{recipe.instructions}</p>
-        <img src={recipe.image_url} />
+            <h4>{recipe.attributes.name}</h4>
+            <p>{recipe.attributes.description}</p>
         </div>
     );
-    }
+};
+
 
     export default Recipe;
