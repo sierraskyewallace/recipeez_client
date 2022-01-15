@@ -1,67 +1,70 @@
 
 import React from "react";
-import DropDown from "./dropDown";
 import { connect } from "react-redux";
 import addRecipe from "../actions/addRecipe";
-//import Select from "react-select";
 
 
 
 class RecipeInput extends React.Component {
     constructor(props) {
         super(props);
-    this.state = {
-        name: "",
-        description: "",
-        instructions: "",
-        ingredients: "",
-        image_url: "",
-        tag_ids: "",
-            }
+        this.state = {
+            name: "",
+            description: "",
+            ingredients: "",
+            instructions: "",
+            image_url: "",
+        };
     }
 
-
-   
-    handleChange = (event) => {
+    handleChange = (e) => {
         this.setState({
-            [event.target.name]: event.target.value
-        })
+            [e.target.name]: e.target.value,
+        });
     }
 
-    handleSubmit = (event) => {
-        event.preventDefault();
+    handleSubmit = (e) => {
+        e.preventDefault();
         this.props.addRecipe(this.state);
+        this.setState({
+            name: "",
+            description: "",
+            ingredients: "",
+            instructions: "",
+            image_url: "",
+        });
     }
 
-    render() { 
-        
-        return ( 
-            <div>
-                <form>
-                    <label> Name: </label><br></br>
-                    <input type="text" name="name"value={this.state.name} onChange={this.handleChange} /><br></br>
-                    <label> Description: </label><br></br>
-                    <input type="text" name="description"value={this.state.description} onChange={this.handleChange} /><br></br>
-                    <label> Instructions: </label><br></br>
-                    <input type="text" name="instructions"value={this.state.instructions} onChange={this.handleChange} /><br></br>
-                    <label> Ingredients: </label><br></br>
-                    <input type="text" name="ingredients"value={this.state.ingredients} onChange={this.handleChange} /><br></br>
-                    <label> Image: </label><br></br>
-                    <input type="text" name="image_url"value={this.state.image_url} onChange={this.handleChange}/><br></br>
-                    
-                    <label> Tag: </label><br></br>
-                    
-                    <DropDown />
+    render() {
 
-                    
-                     <br></br>
-                    <button onClick={this.handleSubmit}>Submit</button>
+        return (
+            <div className="recipe-input">
+                <h1>Add a Recipe</h1>
+                <form onSubmit={this.handleSubmit}>
+                    <label>
+                        Name:
+                    <input type="text" name="name" onChange={this.handleChange} /><br></br>
+                    </label>
+                    <label>
+                        Description:
+                    <input type="text" name="description" onChange={this.handleChange} /><br></br>
+                    </label>
+                    <label>
+                        Ingredients:
+                    <input type="text" name="ingredients" onChange={this.handleChange} /><br></br>
+                    </label>
+                    <label>
+                        Instructions:
+                    <input type="text" name="instructions" onChange={this.handleChange} /><br></br>
+                    </label>
+                    <label>
+                        Image URL:
+                    <input type="text" name="image_url" onChange={this.handleChange} /><br></br>
+                    </label>
+                    <input type="submit" value="Submit" />
                 </form>
             </div>
-         );
+        );
     }
-    
 }
-
-
-    export default connect(null, {addRecipe})(RecipeInput);
+    export default connect(null, { addRecipe })(RecipeInput);

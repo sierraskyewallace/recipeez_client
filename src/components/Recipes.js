@@ -1,30 +1,24 @@
 import React from "react";
 
-const Recipes = ({recipes}) => {
+
+const Recipes = ({ recipes }) => {
     return (
         <div>
-            {recipes.map(recipe => {
-                return (
-                    <li key={recipe.id}>
-                            {recipe.attributes.name} | {recipe.attributes.tags.map(tag => {
-                                return (
-                                    <span key={tag.id}>{tag.name}</span>
-                                )
-                            })}
-                    </li>
-                )
-            })}
+            <h1>Recipes</h1>
+            <ul>
+                {recipes.map(recipe => {
+                    return (
+                        <li key={recipe.id}>
+                            <h2>{recipe.attributes.name}</h2>
+                        </li>
+                    );
+                })}
+            </ul>
         </div>
-    )
-}
+    );
+};
 
 
-    
-
-    
-
-
-    
-
-        
+       
 export default Recipes;
+
