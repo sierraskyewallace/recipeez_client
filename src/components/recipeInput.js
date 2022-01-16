@@ -32,6 +32,7 @@ class RecipeInput extends React.Component {
         ingredients: "",
         image_url: "",
     })
+    window.location.reload()
   }
 
   render() {

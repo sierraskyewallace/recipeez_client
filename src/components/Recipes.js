@@ -9,6 +9,8 @@ state = {}
 
 handleDelete = (recipe) => {
     this.props.deleteRecipe(recipe.id, recipe.category_id)
+    //refresh page
+    window.location.reload()
   }
 
 render() {
