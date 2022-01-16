@@ -1,9 +1,6 @@
 import React from 'react'
-import { Navigate } from 'react-router-dom'
-import CategoryInput from './categoryInput'
-import { fetchCategories } from '../actions/fetchCategories'
 import { Link, useParams } from 'react-router-dom'
-
+import RecipesContainer from '../containers/recipesContainer'
 
 
 const Category = (props) => {
@@ -20,6 +17,8 @@ const Category = (props) => {
       <div>
         <h2>
           {category ? category.name : null} 
+          <RecipesContainer recipes={category ? category.recipes : null} />
+
           
         </h2>
         

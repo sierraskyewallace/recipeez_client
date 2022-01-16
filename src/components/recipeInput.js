@@ -1,70 +1,58 @@
 
 import React from "react";
 import { connect } from "react-redux";
-import addRecipe from "../actions/addRecipe";
-
+import { addRecipe } from "../actions/addRecipe";
 
 
 class RecipeInput extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            name: "",
-            description: "",
-            ingredients: "",
-            instructions: "",
-            image_url: "",
-        };
-    }
 
-    handleChange = (e) => {
-        this.setState({
-            [e.target.name]: e.target.value,
-        });
-    }
+  state = {
+    name: "",
+    instructions: "",
+    ingredients: "",
+    image_url: "",
 
-    handleSubmit = (e) => {
-        e.preventDefault();
-        this.setState({
-            name: "",
-            description: "",
-            ingredients: "",
-            instructions: "",
-            image_url: "",
-        });
-        this.props.addRecipe(this.state);  
-    }
+  }
 
-    render() {
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
 
-        return (
-            <div className="recipe-input">
-                <h1>Add a Recipe</h1>
-                <form onSubmit={this.handleSubmit}>
-                    <label>
-                        Name:
-                    <input type="text" name="name" onChange={this.handleChange} /><br></br>
-                    </label>
-                    <label>
-                        Description:
-                    <input type="text" name="description" onChange={this.handleChange} /><br></br>
-                    </label>
-                    <label>
-                        Ingredients:
-                    <input type="text" name="ingredients" onChange={this.handleChange} /><br></br>
-                    </label>
-                    <label>
-                        Instructions:
-                    <input type="text" name="instructions" onChange={this.handleChange} /><br></br>
-                    </label>
-                    <label>
-                        Image URL:
-                    <input type="text" name="image_url" onChange={this.handleChange} /><br></br>
-                    </label>
-                    <input type="submit" value="Submit" />
-                </form>
-            </div>
-        );
+  handleSubmit = (event) => {
+    event.preventDefault()
+    this.props.addRecipe(this.state, this.props.category.id)
+    this.setState({
+        name: "",
+        instructions: "",
+        ingredients: "",
+        image_url: "",
+
+    })
+  }
+
+  render() {
+    return (
+      <div>
+        <form onSubmit={this.handleSubmit}>
+            <label> Name: </label>
+            <input type='text' placeholder='Name' value={this.state.name} name="name" onChange={this.handleChange}/><br/>
+                
+                <label> Instructions: </label>
+                <input type='text' placeholder='Instructions' value={this.state.instructions} name="instructions" onChange={this.handleChange}/><br/>
+    
+                <label> Ingredients: </label>
+                <input type='text' placeholder='Ingredients' value={this.state.ingredients} name="ingredients" onChange={this.handleChange}/><br/>
+    
+                <label> Image URL: </label>
+                <input type='text' placeholder='Image URL' value={this.state.image_url} name="image_url" onChange={this.handleChange}/><br/>
+    
+                <input type="submit"/>
+            </form>
+        </div>
+        )
     }
 }
-    export default connect(null, { addRecipe })(RecipeInput);
+
+export default connect(null, {addRecipe})(RecipeInput)
