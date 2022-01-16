@@ -36,19 +36,20 @@ class RecipeInput extends React.Component {
 
   render() {
     return (
-      <div className="card">
+      <div>
+        Add a Recipe to this Category:
         <form onSubmit={this.handleSubmit}>
 
-            <label> Name: </label>
+            
             <input type='text' placeholder='Name' value={this.state.name} name="name" onChange={this.handleChange}/><br/>
                 
-                <label> Instructions: </label>
+                
                 <input type='text' placeholder='Instructions' value={this.state.instructions} name="instructions" onChange={this.handleChange}/><br/>
     
-                <label> Ingredients: </label>
+                
                 <input type='text' placeholder='Ingredients' value={this.state.ingredients} name="ingredients" onChange={this.handleChange}/><br/>
     
-                <label> Image URL: </label>
+                
                 <input type='text' placeholder='Image URL' value={this.state.image_url} name="image_url" onChange={this.handleChange}/><br/>
     
                 <input type="submit"/>

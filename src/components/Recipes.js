@@ -16,11 +16,18 @@ render() {
       <div>
         {this.props.recipes && this.props.recipes.map(recipe =>
             <div key={recipe.id}>
-               <h3>{recipe.name}</h3> 
-                <p>{recipe.ingredients}</p>
-                <p>{recipe.instructions}</p>
-                <img src={recipe.image_url} alt={recipe.name}/>
+                <div className="recipe-card"style={{backgroundColor: "#d8c4e3", width: '500px', text: 'center', margin: 'auto', padding: '10px'}}>
+
+                <img src={recipe.image_url} alt={recipe.name}style={{width: '500px', height: '240px'}}/>
+               <h2>{recipe.name}</h2> 
+                Ingredients - <p>{recipe.ingredients} </p>
+                
+                Instructions - <p>{recipe.instructions}</p>
+                
+                <br></br>
                 <button onClick={() => this.handleDelete(recipe)}>Delete</button>
+            </div>
+            <br></br>
             </div>
             )}
         </div>
