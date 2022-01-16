@@ -36,7 +36,7 @@ class RecipeInput extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="card">
         <form onSubmit={this.handleSubmit}>
 
             <label> Name: </label>

@@ -1,11 +1,15 @@
 import React from 'react'
 import {connect} from 'react-redux'
-
+import {deleteRecipe} from '../actions/deleteRecipe'
 
 class Recipes extends React.Component {
 
 state = {}
 
+
+handleDelete = (recipe) => {
+    this.props.deleteRecipe(recipe.id, recipe.category_id)
+  }
 
 render() {
   return (
@@ -16,6 +20,7 @@ render() {
                 <p>{recipe.ingredients}</p>
                 <p>{recipe.instructions}</p>
                 <img src={recipe.image_url} alt={recipe.name}/>
+                <button onClick={() => this.handleDelete(recipe)}>Delete</button>
             </div>
             )}
         </div>
@@ -23,4 +28,4 @@ render() {
     }
 }
 
-export default connect(null, {})(Recipes)
+export default connect(null, {deleteRecipe})(Recipes)

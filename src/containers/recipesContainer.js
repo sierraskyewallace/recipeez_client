@@ -8,7 +8,10 @@ class RecipesContainer extends React.Component {
   render() {
     return (
       <div>
-        <RecipeInput category={this.props.category}/><br></br>
+        <br></br>
+        <RecipeInput category={this.props.category}/>
+        <br></br>
+        <br></br>
         <Recipes recipes={this.props.category && this.props.category.recipes}/>
       </div>
     )
