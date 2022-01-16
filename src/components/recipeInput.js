@@ -5,12 +5,15 @@ import { addRecipe } from "../actions/addRecipe";
 
 
 class RecipeInput extends React.Component {
+// set category id of current category to form
+
 
   state = {
     name: "",
     instructions: "",
     ingredients: "",
     image_url: "",
+    
 
   }
 
@@ -28,7 +31,6 @@ class RecipeInput extends React.Component {
         instructions: "",
         ingredients: "",
         image_url: "",
-
     })
   }
 
@@ -36,6 +38,7 @@ class RecipeInput extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
+
             <label> Name: </label>
             <input type='text' placeholder='Name' value={this.state.name} name="name" onChange={this.handleChange}/><br/>
                 

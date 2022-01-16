@@ -8,7 +8,7 @@ export default function appReducer(state = {categories: []}, action) {
         return {...state, categories: [...state.categories, action.payload]}
       case 'ADD_RECIPE':
         let categories = state.categories.map(category => {
-          if (category.id === action.payload.id) {
+          if (category.id === action.payload.category_id) {
             return action.payload
           } else {
             return category
@@ -19,3 +19,4 @@ export default function appReducer(state = {categories: []}, action) {
         return state
     }
   }
+

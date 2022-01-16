@@ -17,7 +17,7 @@ const Category = (props) => {
       <div>
         <h2>
           {category ? category.name : null} 
-          <RecipesContainer recipes={category ? category.recipes : null} />
+          <RecipesContainer category={category}/>
 
           
         </h2>
