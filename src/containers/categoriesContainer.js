@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {Route, Routes} from 'react-router-dom'
 import { fetchCategories } from '../actions/fetchCategories'
 import Categories from '../components/Categories'
-//import Category from '../components/Category'
+import Category from '../components/Category'
 import CategoryInput from '../components/categoryInput'
 import NavBar from '../components/navBar'
 
@@ -18,12 +18,14 @@ class CategoriesContainer extends React.Component {
           <div>
             <NavBar />
             <Routes>
-              <Route path='/categories' element={<Categories categories={this.props.categories} />} />
+                <Route path='/categories' element={<Categories categories={this.props.categories} />} />
+              <Route path='/categories/:id' element={<Category categories= {this.props.categories} />} />
               <Route path='/categories/new' element={<CategoryInput />} />
             </Routes>
           </div>
       )
   }
+
 }
 
 const mapStateToProps = state => {
