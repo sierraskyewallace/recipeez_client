@@ -1,9 +1,10 @@
 import React from 'react';
-//import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import NavBar from './components/navBar';
+import { Routes, Route } from 'react-router-dom';
+//import NavBar from './components/navBar';
 import Home from './components/home';
 import { connect } from 'react-redux';
-import RecipesContainer from './containers/recipesContainer';
+import CategoriesContainer from './containers/categoriesContainer';
+
 
 
 
@@ -18,8 +19,7 @@ class App extends React.Component {
     return (
       <div className="App"> 
         <Home />
-        
-        <RecipesContainer />
+        <CategoriesContainer categories={this.props.categories} />
    
       </div>
     );
