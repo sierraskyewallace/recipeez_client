@@ -42,16 +42,16 @@ class RecipeInput extends React.Component {
         <form onSubmit={this.handleSubmit}>
 
             
-            <input type='text' placeholder='Name' value={this.state.name} name="name" onChange={this.handleChange}/><br/>
+            <input type='text' placeholder='Name' value={this.state.name} name="name" onChange={this.handleChange} required /><br/>
                 
                 
-                <input type='text' placeholder='Instructions' value={this.state.instructions} name="instructions" onChange={this.handleChange}/><br/>
+                <input type='text' placeholder='Instructions' value={this.state.instructions} name="instructions" onChange={this.handleChange} required/><br/>
     
                 
-                <input type='text' placeholder='Ingredients' value={this.state.ingredients} name="ingredients" onChange={this.handleChange}/><br/>
+                <input type='text' placeholder='Ingredients' value={this.state.ingredients} name="ingredients" onChange={this.handleChange} required/><br/>
     
                 
-                <input type='text' placeholder='Image URL' value={this.state.image_url} name="image_url" onChange={this.handleChange}/><br/>
+                <input type='text' placeholder='Image URL' value={this.state.image_url} name="image_url" onChange={this.handleChange} required/><br/>
     
                 <input type="submit"/>
             </form>
