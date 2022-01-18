@@ -8,8 +8,8 @@ import CategoriesContainer from './containers/categoriesContainer';
 
 class App extends React.Component {
 
-  
   componentDidMount() {
+    
   }
  
 
