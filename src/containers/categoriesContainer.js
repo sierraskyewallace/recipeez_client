@@ -6,6 +6,7 @@ import Categories from '../components/Categories'
 import Category from '../components/Category'
 import CategoryInput from '../components/categoryInput'
 import NavBar from '../components/navBar'
+import Footer from '../components/Footer';
 
 class CategoriesContainer extends React.Component {
 
@@ -22,10 +23,11 @@ class CategoriesContainer extends React.Component {
               <Route path='/categories/:id' element={<Category categories= {this.props.categories} />} />
               <Route path='/categories/new' element={<CategoryInput />} />
             </Routes>
+            <Footer />
           </div>
+          
       )
   }
-
 }
 
 const mapStateToProps = state => {

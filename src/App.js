@@ -5,6 +5,7 @@ import Home from './components/home';
 import { connect } from 'react-redux';
 import CategoriesContainer from './containers/categoriesContainer';
 
+
 class App extends React.Component {
 
   
@@ -17,7 +18,7 @@ class App extends React.Component {
       <div className="App">
         <Home />
         <CategoriesContainer categories={this.props.categories} />
-   
+        
       </div>
     );
   }
