@@ -1,9 +1,10 @@
 import React from 'react'
 import Recipes from '../components/Recipes'
 import RecipeInput from '../components/recipeInput'
-
+import { connect } from 'react-redux'
 
 class RecipesContainer extends React.Component {
+
 
   render() {
     return (
@@ -13,9 +14,12 @@ class RecipesContainer extends React.Component {
         <br></br>
         <br></br>
         <Recipes recipes={this.props.category && this.props.category.recipes}/>
-      </div>
+        
+              </div>
     )
   } 
 }
 
-export default RecipesContainer
+
+
+export default connect()(RecipesContainer)
