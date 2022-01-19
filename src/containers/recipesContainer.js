@@ -10,7 +10,8 @@ class RecipesContainer extends React.Component {
     
   }
 
-
+  componentDidMount() {
+  }
 
 
   render() {
@@ -26,8 +27,6 @@ class RecipesContainer extends React.Component {
     )
   } 
 }
-
-
 
 
 

@@ -6,14 +6,14 @@ import {deleteRecipe} from '../actions/deleteRecipe'
 class Recipes extends React.Component {
 
   state = {
-    recipes: []
+ 
   }
 
 
 handleDelete = (recipe) => {
     this.props.deleteRecipe(recipe.id, recipe.category_id)
-    
-  }
+}
+  
 
 render() {
   return (

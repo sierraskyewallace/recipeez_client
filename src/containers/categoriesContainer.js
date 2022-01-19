@@ -12,14 +12,20 @@ import LiveCodingComponent from '../components/liveCodingComponent'
 
 class CategoriesContainer extends React.Component {
 
+  state = {
+    
+
+  }
+
   componentDidMount() {
     this.props.fetchCategories()
   }
 
 
-   componentDidUpdate() {
-    this.props.fetchCategories()
+  componentDidUpdate() {
+    
   }
+
 
 
   render() {
