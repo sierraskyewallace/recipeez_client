@@ -3,7 +3,14 @@ import Recipes from '../components/Recipes'
 import RecipeInput from '../components/recipeInput'
 import { connect } from 'react-redux'
 
+
 class RecipesContainer extends React.Component {
+
+  state = {
+    
+  }
+
+
 
 
   render() {
@@ -19,6 +26,8 @@ class RecipesContainer extends React.Component {
     )
   } 
 }
+
+
 
 
 

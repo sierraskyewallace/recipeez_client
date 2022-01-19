@@ -2,7 +2,12 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {deleteRecipe} from '../actions/deleteRecipe'
 
+
 class Recipes extends React.Component {
+
+  state = {
+    recipes: []
+  }
 
 
 handleDelete = (recipe) => {

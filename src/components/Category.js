@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import RecipesContainer from '../containers/recipesContainer'
+import { connect } from 'react-redux'
 
 
 const Category = (props) => {
@@ -29,4 +30,11 @@ const Category = (props) => {
   
   }
 
-export default Category
+ 
+
+
+
+
+
+
+export default connect()(Category)

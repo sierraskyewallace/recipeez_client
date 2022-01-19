@@ -12,7 +12,7 @@ export const addCategory = (category) => {
         })
         .then(response => response.json())
         .then(category => {
-            dispatch({type: 'ADD_CATEGORY', payload: category.data});
+            dispatch({type: 'ADD_CATEGORY', payload: category});
         });
     };
 }

@@ -12,6 +12,7 @@ export const addRecipe = (recipe, categoryId) => {
     })
     .then(response => response.json())
     .then(category => {
+      
         if (category.error) {
           alert(category.error)
         } else {

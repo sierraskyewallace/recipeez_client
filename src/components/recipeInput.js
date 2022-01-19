@@ -24,13 +24,14 @@ class RecipeInput extends React.Component {
   }
 
   handleSubmit = (event) => {
-    event.preventDefault()
-    this.props.addRecipe(this.state, this.props.category.id)
+    event.preventDefault();
+    this.props.addRecipe(this.state, this.props.category.id);
     this.setState({
-      name: '',
-      instructions: '',
-      ingredients: '',
-      image_url: '',
+      name: "",
+      instructions: "",
+      ingredients: "",
+      image_url: "",
+
     })
 
 
@@ -55,7 +56,7 @@ class RecipeInput extends React.Component {
                 
                 <input type='text' placeholder='Image URL' value={this.state.image_url} name="image_url" onChange={this.handleChange} required/><br/>
     
-                <button type='submit'>Add Recipe</button>
+                <button type='submit' >Add Recipe</button>
         </form>
       </div>
     )
